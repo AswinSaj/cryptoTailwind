@@ -7,7 +7,7 @@ import News from "./components/News";
 
 function App() {
   return (
-    <body className="font-[Poppins] bg-[#FFE3E1] min-h-screen">
+    <body className="font-[Poppins] bg-[#FFF5E4] min-h-screen">
       <div className="navbar">
         <Navbar />
       </div>

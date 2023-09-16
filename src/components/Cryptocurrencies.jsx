@@ -41,8 +41,8 @@ const Cryptocurrencies = ({ simplified }) => {
       )}
       <div className="grid grid-cols-4 gap-2 px-10 ">
         {cryptos?.map((crypto) => (
-          <div className="w-100 h-100" key={crypto.id}>
-            <div className="rounded-md overflow-hidden shadow-lg max-w-sm p-5 h-full flex justify-between hover:cursor-pointer ">
+          <div className="w-100 h-100  " key={crypto.id}>
+            <div className="rounded-md overflow-hidden shadow-lg max-w-sm p-5 h-full flex justify-between hover:cursor-pointer bg-[#9ED2BE] ">
               <div>
                 <h2 className="text-4xl">{crypto.rank}</h2>
                 <h1 className="text-xl">{crypto.name}</h1>

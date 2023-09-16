@@ -3,6 +3,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import Cryptocurrencies from "./Cryptocurrencies";
+import News from "./News";
 
 const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -59,9 +60,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="home-heading-container flex items-center justify-between pt-5 mx-20 rounded-md ">
+      <div className="home-heading-container flex items-center justify-between pt-5 mx-20 rounded-md pb-5">
         <h1 className="text-4xl">Top 10 Cryptocurrencies In The World</h1>
-
         <Link className="text-sky-500 mr-5" to="/cryptocurrencies">
           Show More
         </Link>
@@ -69,12 +69,11 @@ const Home = () => {
       <Cryptocurrencies simplified />
       <div className="home-heading-container flex items-center justify-between pt-5 mx-20 rounded-md">
         <h1 className="text-4xl">Latest News</h1>
-        <h1>
-          <Link className="text-sky-500 mr-5" to="/news">
-            Show More
-          </Link>
-        </h1>
+        <Link className="text-sky-500 mr-5" to="/news">
+          Show More
+        </Link>
       </div>
+      <News simplified />
     </>
   );
 };
