@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
+import parse from "html-react-parser";
 import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
@@ -101,9 +102,9 @@ const CryptoDetails = () => {
   return (
     <>
       <div className="wrapper">
-        <div className="heading">
-          <h1>{cryptoDetails.name} Price</h1>
-          <p>
+        <div className="heading text-center">
+          <h1 className="text-3xl font-bold">{cryptoDetails.name} Price</h1>
+          <p classname="text-2xl">
             {cryptoDetails.name} live prices in US dollars.View value stats ,
             market cap and supplpy
           </p>
@@ -112,7 +113,7 @@ const CryptoDetails = () => {
           for="countries"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         ></label>
-        <select
+        {/* <select
           id="countries"
           onChange={(event) => setTimePeriod(event.target.value)}
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[10vw] p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -121,9 +122,9 @@ const CryptoDetails = () => {
           {time.map((date) => (
             <option key={date}>{date}</option>
           ))}
-        </select>
+        </select> */}
 
-        <div className="flex justify-around">
+        <div className="flex justify-around pt-10 ">
           <div>
             <div className="text-center">
               <h1 className="text-2xl font-semibold">
@@ -133,11 +134,11 @@ const CryptoDetails = () => {
             </div>
             {stats.map(({ title, value, icon }, index) => (
               <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2 flex justify-between items-center bg-white rounded-lg">
+                <td className="border border-gray-300 px-4 py-2 flex justify-between items-center bg-[#9ED2BE] rounded-lg">
                   <div className="">{title}</div>
                   <div className="pl-5">{icon}</div>
                 </td>
-                <td className="border border-gray-300 px-4 py-2 font-bold bg-white rounded-lg">
+                <td className="border border-gray-300 px-4 py-2 font-bold bg-[#9ED2BE] rounded-lg">
                   {value}
                 </td>
               </tr>
@@ -152,11 +153,11 @@ const CryptoDetails = () => {
             <div className="pl-4">
               {genericStats.map(({ icon, title, value }, index) => (
                 <tr key={index} className="">
-                  <td className="border  border-gray-300 px-4 py-2 flex  justify-between items-center bg-white rounded-lg ">
+                  <td className="border  border-gray-300 px-4 py-2 flex  justify-between items-center bg-[#9ED2BE] rounded-lg ">
                     <div className="">{title}</div>
                     <div className="pl-10">{icon}</div>
                   </td>
-                  <td className="border border-gray-300 px-4 py-2 font-bold bg-white rounded-lg">
+                  <td className="border border-gray-300 px-4 py-2 font-bold bg-[#9ED2BE] rounded-lg">
                     {value}
                   </td>
                 </tr>
@@ -164,11 +165,27 @@ const CryptoDetails = () => {
             </div>
           </div>
         </div>
-        <LineChart
-          coinHistory={coinHistory}
-          coinPrice={millify(cryptoDetails.price)}
-          coinName={cryptoDetails.name}
-        />
+        <div className="details">
+          <h1>What is {cryptoDetails.name}</h1>
+          {parse(cryptoDetails.description)};
+        </div>
+        <div className="">
+          <h1>{cryptoDetails.name} Links</h1>
+          <table>
+            <tbody>
+              {cryptoDetails.links.map((link, index) => (
+                <tr key={index} className="">
+                  <td className="border border-gray-300 px-4 py-2 flex justify-between items-center bg-[#9ED2BE] rounded-lg">
+                    <div className="">{link.type}</div>
+                    <a href={link.url} target="_blank">
+                      {link.name}
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );
