@@ -42,7 +42,7 @@ const Cryptocurrencies = ({ simplified }) => {
         </div>
       )}
 
-      <div className="grid grid-cols-4 gap-2 px-10 ">
+      <div className="grid grid-cols-4 gap-2 px-10  pl-[10vw] pr-[10vw] pb-10 ">
         {cryptos?.map((crypto) => (
           <div className="w-100 h-100  " key={crypto.id}>
             <Link key={crypto.id} to={`/crypto/${crypto.uuid}`}>

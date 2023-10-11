@@ -14,17 +14,21 @@ const News = ({ simplified }) => {
 
   return (
     <>
-      <h1 className="text-4xl text-center py-5">Top News</h1>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pl-[10vw] pr-[10vw] ">
         <div className="grid grid-cols-3 gap-2">
           {cryptoNews.value.map((news, i) => (
             <div
-              className=" w-[31vw] h-[30vh] rounded-md overflow-hidden shadow-lg flex justify-between hover:cursor-pointer bg-[#9ED2BE] "
+              className=" w-[26vw] h-[30vh] rounded-md overflow-hidden shadow-lg flex justify-between hover:cursor-pointer bg-[#9ED2BE] "
               key={i}
             >
-              <a href={news.url} target="_blank" rel="noreferrer">
+              <a
+                href={news.url}
+                target="_blank"
+                rel="noreferrer"
+                className="p-0"
+              >
                 <div className="flex text-xl  py-11 px-5 h-[80%]">
-                  <h1 className="px-4">{news.name}</h1>
+                  <h1 className="px-1">{news.name}</h1>
                   <img
                     className="h-[11vh]"
                     src={news?.image?.thumbnail?.contentUrl || dummy}
