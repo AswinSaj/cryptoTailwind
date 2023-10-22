@@ -14,7 +14,7 @@ const News = ({ simplified }) => {
 
   return (
     <>
-      <div className="flex justify-center items-center pl-[10vw] pr-[10vw] ">
+      <div className="flex justify-center items-center pl-[10vw] pr-[10vw] pt-10 bg-[#11062A] ">
         <div className="grid grid-cols-3 gap-2">
           {cryptoNews.value.map((news, i) => (
             <div

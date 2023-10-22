@@ -101,10 +101,10 @@ const CryptoDetails = () => {
 
   return (
     <>
-      <div className="wrapper">
-        <div className="heading text-center">
+      <div className="wrapper bg-[#120747] text-white">
+        <div className="heading text-center pb-5">
           <h1 className="text-3xl font-bold">{cryptoDetails.name} Price</h1>
-          <p classname="text-2xl">
+          <p classname="text-4xl">
             {cryptoDetails.name} live prices in US dollars.View value stats ,
             market cap and supplpy
           </p>
@@ -123,18 +123,24 @@ const CryptoDetails = () => {
             <option key={date}>{date}</option>
           ))}
         </select> */}
+        <div className="text-center text-2xl">
+          <h1 className="text-bold">What is {cryptoDetails.name}?</h1>
+          <h1 className="text-center w-[30vw] mx-auto">
+            {parse(cryptoDetails.description)};
+          </h1>
+        </div>
 
         <div className="flex justify-around pt-10 ">
           <div>
-            <div className="text-center">
+            <div className="text-center ">
               <h1 className="text-2xl font-semibold">
                 {cryptoDetails.name} Value Statistics
               </h1>
               <h1>An overview showing the stats of {cryptoDetails.name} </h1>
             </div>
             {stats.map(({ title, value, icon }, index) => (
-              <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2 flex justify-between items-center bg-[#9ED2BE] rounded-lg">
+              <tr key={index} className="text-black">
+                <td className="border border-gray-300 px-4 py-2 flex justify-between items-center bg-[#9ED2BE] rounded-lg ">
                   <div className="">{title}</div>
                   <div className="pl-5">{icon}</div>
                 </td>
@@ -145,10 +151,14 @@ const CryptoDetails = () => {
             ))}
           </div>
 
-          <div className="">
+          <div className="text-black">
             <div className="text-center">
-              <h1 className="text-2xl font-semibold">Other Statistics</h1>
-              <h1>Overview showing the stats of all cryptocurrencies</h1>
+              <h1 className="text-2xl font-semibold text-white">
+                Other Statistics
+              </h1>
+              <h1 className="text-white">
+                Overview showing the stats of all cryptocurrencies
+              </h1>
             </div>
             <div className="pl-4">
               {genericStats.map(({ icon, title, value }, index) => (
@@ -165,11 +175,8 @@ const CryptoDetails = () => {
             </div>
           </div>
         </div>
-        <div className="details">
-          <h1>What is {cryptoDetails.name}</h1>
-          {parse(cryptoDetails.description)};
-        </div>
-        <div className="">
+
+        {/* <div className="flex justify-center">
           <h1>{cryptoDetails.name} Links</h1>
           <table>
             <tbody>
@@ -185,7 +192,7 @@ const CryptoDetails = () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </div> */}
       </div>
     </>
   );

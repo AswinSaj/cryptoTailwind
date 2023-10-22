@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="bg-[#120747]">
-      <nav className="flex justify-between items-center w-[95%] mx-auto pt-5">
+      <nav className="flex justify-between items-center w-[95%] mx-auto pt-5 pb-5 ">
         <div>
           <h1 className="text-3xl text-white">CRYPTODUNIA</h1>
         </div>

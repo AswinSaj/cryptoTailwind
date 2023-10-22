@@ -8,7 +8,7 @@ import CryptoDetails from "./components/CryptoDetails";
 
 function App() {
   return (
-    <body className="font-[Poppins] bg-[#FFF5E4] min-h-screen">
+    <body className="font-[Poppins] bg-[#120747] min-h-screen">
       <div className="navbar">
         <Navbar />
       </div>

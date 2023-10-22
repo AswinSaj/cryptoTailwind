@@ -27,7 +27,7 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <>
       {!simplified && (
-        <div className="container flex justify-center items-center pt-10 pb-5 ">
+        <div className="container flex justify-center items-center pt-10 pb-5 bg-[#110630]  ">
           <div className="search-crypto w-[50vw] flex items-center rounded-md bg-white">
             <input
               type="search"
@@ -42,7 +42,7 @@ const Cryptocurrencies = ({ simplified }) => {
         </div>
       )}
 
-      <div className="grid grid-cols-4 gap-2 px-10  pl-[10vw] pr-[10vw] pb-10 ">
+      <div className="grid grid-cols-4 gap-2 px-10  pl-[10vw] pr-[10vw] pb-10 bg-[#110630] ">
         {cryptos?.map((crypto) => (
           <div className="w-100 h-100  " key={crypto.id}>
             <Link key={crypto.id} to={`/crypto/${crypto.uuid}`}>
